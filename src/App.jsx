@@ -1,12 +1,21 @@
-import Product from "./pages/Product";
 import Home from "./pages/Home";
-import ProductList from "./pages/ProductList";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import Cart from "./pages/Cart";
+import ProductDetails from "./pages/ProductDetails";
+import "./App.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 const App = () => {
-  return <Home/>;
-};
+  return (
+    <Router>
+      <Switch>
+          <Route path='/' exact component={Home}/>
+          <Route path='/product/:id' component={ProductDetails}/>
+      </Switch>
+    </Router>
+  );
+}
 
 export default App;

@@ -9,11 +9,11 @@ const Container = styled.div`
     justify-content: space-between;
 `;
 
-const Products = () => {
+const Products = ({handleBadgeIncrement}) => {
   return (
     <Container>
       {popularProducts.map((item) => (
-        <Product item={item} key={item.id} />
+        <Product item={item} key={item.id} handleBadgeIncrement={handleBadgeIncrement} />
       ))}
     </Container>
   );

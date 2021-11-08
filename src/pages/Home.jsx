@@ -1,21 +1,19 @@
-import React from "react";
-import Announcement from "../components/Announcement";
-import Categories from "../components/Categories";
+import React, { useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
 
 const Home = () => {
+  const [badge,setBadge] = useState(0);
+  const handleBadgeIncrement = () =>{
+    setBadge(badge+1);
+  }
   return (
     <div>
-      <Announcement />
-      <Navbar />
+      <Navbar badge={badge} />
       <Slider />
-      <Categories />
-      <Products/>
-      <Newsletter/>
+      <Products handleBadgeIncrement={handleBadgeIncrement}/>
       <Footer/>
     </div>
   );
